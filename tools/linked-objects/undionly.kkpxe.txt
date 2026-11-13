@@ -26,6 +26,7 @@ bios_timer.o
 biosint.o
 bitmap.o
 blockdev.o
+blocktrans.o
 bootsector.o
 bzimage.o
 cachedhcp.o
@@ -131,6 +132,7 @@ hmac_drbg.o
 http.o
 httpauth.o
 httpbasic.o
+httpblock.o
 httpconn.o
 httpcore.o
 httpdigest.o

@@ -121,6 +121,15 @@ for entry in "${TARGETS[@]}"; do
     current=$(mktemp)
     extract "$map" > "$current"
 
+    # HTTP downloads alone cannot boot an HTTP ISO. Reject missing SAN support
+    # even in --update mode, so a disabled option cannot become the baseline.
+    if ! grep -qx 'httpblock\.o' "$current"; then
+        echo "MISSING  $name -- HTTP SAN support (httpblock.o) is required"
+        failed=1
+        rm -f "$current"
+        continue
+    fi
+
     if [[ $mode == "update" ]]; then
         cp "$current" "$baseline"
         echo "UPDATED  $name ($(wc -l < "$baseline") objects)"

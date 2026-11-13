@@ -110,7 +110,7 @@ FILE_SECBOOT ( PERMITTED );
 #if ! defined ( SANBOOT_NULL )
   //#define SANBOOT_PROTO_AOE	/* AoE protocol */
   //#define SANBOOT_PROTO_FCP	/* Fibre Channel protocol */
-  //#define SANBOOT_PROTO_HTTP	/* HTTP SAN protocol */
+  #define SANBOOT_PROTO_HTTP	/* HTTP SAN protocol */
   //#define SANBOOT_PROTO_IB_SRP	/* Infiniband SCSI RDMA protocol */
   //#define SANBOOT_PROTO_ISCSI	/* iSCSI protocol */
 #endif
